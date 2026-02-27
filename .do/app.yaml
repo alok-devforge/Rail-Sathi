@@ -8,7 +8,8 @@ services:
       repo: your-github-username/rail-sathi   # ← replace with your repo
       branch: main
       deploy_on_push: true
-    run_command: node index.js
+    build_command: cd server && npm install --omit=dev
+    run_command: cd server && node index.js
     environment_slug: node-js
     instance_size_slug: apps-s-1vcpu-0.5gb   # $4/month — 512 MB RAM, perfect for Socket.IO
     instance_count: 1
