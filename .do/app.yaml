@@ -3,7 +3,7 @@ region: blr  # Bangalore — lowest latency for India
 
 services:
   - name: api
-    source_dir: /server          # relative to repo root → push RailSathi/ as repo root
+    source_dir: server
     github:
       repo: your-github-username/rail-sathi   # ← replace with your repo
       branch: main
