@@ -30,13 +30,7 @@
     },
     "plugins": [
       "expo-router",
-      "expo-web-browser",
-      [
-        "react-native-auth0",
-        {
-          "domain": "dev-71wawdqybqgr07hn.us.auth0.com"
-        }
-      ]
+      "expo-web-browser"
     ],
     "extra": {
       "router": {},
