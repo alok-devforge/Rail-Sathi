@@ -1,0 +1,28 @@
+name: rail-sathi-server
+region: blr  # Bangalore — lowest latency for India
+
+services:
+  - name: api
+    source_dir: /server          # relative to repo root → push RailSathi/ as repo root
+    github:
+      repo: your-github-username/rail-sathi   # ← replace with your repo
+      branch: main
+      deploy_on_push: true
+    run_command: node index.js
+    environment_slug: node-js
+    instance_size_slug: apps-s-1vcpu-0.5gb   # $4/month — 512 MB RAM, perfect for Socket.IO
+    instance_count: 1
+    http_port: 8080
+    health_check:
+      http_path: /health
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "8080"
+      - key: GROQ_API_KEY
+        value: "REPLACE_WITH_YOUR_KEY"
+        type: SECRET
+      - key: ELEVENLABS_API_KEY
+        value: "REPLACE_WITH_YOUR_KEY"
+        type: SECRET
