@@ -30,7 +30,19 @@
     },
     "plugins": [
       "expo-router",
-      "expo-web-browser"
-    ]
+      "expo-web-browser",
+      [
+        "react-native-auth0",
+        {
+          "domain": "dev-71wawdqybqgr07hn.us.auth0.com"
+        }
+      ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "46724324-af44-4aaa-800c-aac006f1cabb"
+      }
+    }
   }
 }
